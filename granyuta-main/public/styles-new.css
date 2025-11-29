@@ -1,0 +1,196 @@
+/* --- ПРАВИЛЬНЫЕ СТИЛИ ДЛЯ АДАПТИВНОГО МЕНЮ --- */
+
+/* Десктоп (901px и больше) */
+@media (min-width: 901px) {
+    /* ПРИНУДИТЕЛЬНО СКРЫТЬ DRAWER НА ПК */
+    .mobile-drawer {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    .burger {
+        display: none !important;
+    }
+    
+    /* Показывать красивое горизонтальное меню */
+    .header-content .main-nav {
+        display: flex !important;
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .header-content .main-nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .header-content .main-nav a {
+        color: #8B4513;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.75rem 1.25rem;
+        border-radius: 25px;
+        transition: all 0.3s;
+        background: rgba(255,255,255,0.1);
+        border: 2px solid transparent;
+    }
+    
+    .header-content .main-nav a:hover,
+    .header-content .main-nav a.active {
+        background: rgba(218, 165, 32, 0.2);
+        color: #D2691E;
+        border-color: #DAA520;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
+    }
+    
+    .header-content .contact-info {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+    }
+    
+    .header-content .contact-info .phone {
+        font-weight: bold;
+        color: #8B4513;
+        font-size: 1rem;
+        margin: 0;
+    }
+    
+    .header-content .contact-info .social-links {
+        display: flex;
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+    
+    .header-content .contact-info .social-links a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #8B4513;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 20px;
+        transition: all 0.3s;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(139, 69, 19, 0.2);
+        font-size: 0.9rem;
+    }
+    
+    .header-content .contact-info .social-links a:hover {
+        background: rgba(218, 165, 32, 0.2);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(218, 165, 32, 0.3);
+    }
+    
+    .header-content .contact-info .social-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Мобильные (до 900px) */
+@media (max-width: 900px) {
+    /* Скрыть обычное меню на мобильных */
+    .header-content .main-nav,
+    .header-content .contact-info {
+        display: none !important;
+    }
+    
+    /* Показывать кнопку-бургер */
+    .burger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: #DAA520;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 200;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    .burger span {
+        display: block;
+        width: 24px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+        margin: 3px 0;
+        transition: 0.3s;
+    }
+    
+    .burger.open span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .burger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .header-content {
+        position: relative;
+        padding-right: 60px;
+    }
+} 
+
+.whatsapp-float {
+    position: fixed !important;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 99999 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pulse 2s infinite;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    background: #128c7e;
+}
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 22px;
+    }
+}
+@keyframes pulse {
+    0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7); }
+    100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+} 

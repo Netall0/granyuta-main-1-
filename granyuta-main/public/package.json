@@ -1,0 +1,24 @@
+{
+  "name": "granyuta",
+  "version": "1.0.0",
+  "description": "Современный одностраничный сайт с функциональными вкладками, калькулятором стоимости и интеграцией с Telegram.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "optimize-images": "node optimize-images.js",
+    "seo-check": "lighthouse https://granyuta.ru --output json --output html",
+    "build-sitemap": "node generate-sitemap.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.32.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ГрАнь Уюта — Бани-бочки из сибирского кедра",
+  "short_name": "ГрАнь Уюта",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2d3a4a",
+  "description": "Бани-бочки из сибирского кедра в Новосибирске. Производство, продажа, доставка и установка. Индивидуальный подход, гарантия, честные цены.",
+  "icons": [
+    {
+      "src": "/icons/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
