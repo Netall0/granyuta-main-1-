@@ -10,7 +10,7 @@
     "build": "echo \"No build step required\"",
     "lint": "eslint .",
     "security-check": "npm audit",
-    "recreate-db": "node recreate-db.js"
+    "recreate-db": "python db/init_db.py 2"
   },
   "keywords": ["banya", "sauna", "cedar", "russia"],
   "author": "ГрАнь Уюта",

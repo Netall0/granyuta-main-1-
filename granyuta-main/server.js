@@ -307,13 +307,15 @@ app.post('/api/admin/recreate-db', async (req, res) => {
         catalogCache = null;
         cacheTimestamp = null;
 
-        // Путь к Python скрипту
-        const dbInitScript = path.join(__dirname, 'db', 'init_db.py');
+        // Путь к папке db и скрипту
+        const dbDir = path.join(__dirname, 'db');
+        const dbInitScript = path.join(dbDir, 'init_db.py');
         const pythonCommand = process.platform === 'win32' ? 'python' : 'python3';
         
-        // Запускаем Python скрипт с аргументом для принудительного пересоздания
+        // Запускаем Python скрипт из папки db, чтобы он мог найти models.py
         const { stdout, stderr } = await execAsync(
-            `${pythonCommand} "${dbInitScript}" 2`
+            `${pythonCommand} init_db.py 2`,
+            { cwd: dbDir }
         );
 
         if (stderr && !stderr.includes('Using cached')) {

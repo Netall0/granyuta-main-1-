@@ -1,9 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Base, Bathhouse
 import os
 import json
 import sys
+
+# Добавляем текущую директорию в путь для импорта models
+sys.path.insert(0, os.path.dirname(__file__))
+from models import Base, Bathhouse
 
 # Настройка кодировки для Windows
 if sys.platform == 'win32':
